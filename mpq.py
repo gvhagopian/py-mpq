@@ -340,7 +340,7 @@ def assemble_mpq(mpq, src_dir, fout_dest):
 
     # write encrypted hash table
     mpq.header.dwHashTablePos = fout_dest.tell()
-    mpq.write_table(fout_dest, mpq.header.dwHashTableSize, Hash, mpq.htable, mpq.crypt.MPQ_KEY_HASH_TABLE)
+    mpq.write_table(fout_dest, mpq.header.dwHashTableSize, MpqHash, mpq.htable, mpq.crypt.MPQ_KEY_HASH_TABLE)
 
     # write encrypted block table
     mpq.header.dwBlockTablePos = fout_dest.tell()
